@@ -1,0 +1,36 @@
+---
+import PhotoGrid from './PhotoGrid.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'days'>;
+  isFirst: boolean;
+  lang?: string;
+}
+
+const { entry, isFirst, lang = 'zh' } = Astro.props;
+const { Content } = await entry.render();
+
+const locale = lang === 'en' ? 'en-US' : 'zh-CN';
+const dateStr = entry.data.date.toLocaleDateString(locale, {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+<article class="entry">
+  <div class="entry-node-col">
+    <div class:list={['entry-node', { faded: !isFirst }]}></div>
+    <div class="entry-connector"></div>
+  </div>
+  <div class="entry-body">
+    <div class="entry-date">{dateStr}</div>
+    <h2 class="entry-title">{entry.data.title}</h2>
+    <div class="entry-content">
+      <Content />
+    </div>
+    {entry.data.photos && entry.data.photos.length > 0 && (
+      <PhotoGrid photos={entry.data.photos} />
+    )}
+  </div>
+</article>

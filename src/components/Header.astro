@@ -1,0 +1,18 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  langSwitch?: { href: string; label: string };
+}
+
+const { title, description, langSwitch } = Astro.props;
+---
+<header class="site-header">
+  <h1 class="site-title">{title}</h1>
+  <p class="site-description">{description}</p>
+  {langSwitch && (
+    <nav class="lang-switch">
+      <a href={langSwitch.href}>{langSwitch.label}</a>
+    </nav>
+  )}
+</header>

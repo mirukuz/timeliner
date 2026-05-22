@@ -1,0 +1,12 @@
+:root {
+  --bg: #f5f0e8;
+  --text-primary: #3d2b1a;
+  --text-secondary: #7a6040;
+  --text-muted: #9e8060;
+  --node-active: #8b6f47;
+  --node-inactive: #c4a882;
+  --line: #d4c4a8;
+  --accent: #8b6f47;
+  --font-body: Georgia, 'Times New Roman', serif;
+  --font-heading: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+}

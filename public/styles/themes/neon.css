@@ -1,0 +1,13 @@
+:root {
+  --bg: #0d0d0d;
+  --text-primary: #ffffff;
+  --text-secondary: #555555;
+  --text-muted: #333333;
+  --node-active: #ff2d78;
+  --node-inactive: #00f5d4;
+  --node-glow: 0 0 8px #ff2d78;
+  --line: #1a1a1a;
+  --accent: #ff2d78;
+  --font-body: 'Courier New', Courier, monospace;
+  --font-heading: 'Courier New', Courier, monospace;
+}

@@ -1,0 +1,144 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.site-header {
+  padding: 2rem 1rem 1rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.site-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem;
+}
+
+.site-description {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.lang-switch {
+  margin-top: 0.5rem;
+}
+
+.lang-switch a {
+  color: var(--accent);
+  font-size: 0.8rem;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.lang-switch a:hover {
+  opacity: 1;
+}
+
+.timeline {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+.entry {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.entry:last-child .entry-connector {
+  display: none;
+}
+
+.entry-node-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3px;
+  flex-shrink: 0;
+}
+
+.entry-node {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--node-active);
+  box-shadow: var(--node-glow, none);
+  flex-shrink: 0;
+}
+
+.entry-node.faded {
+  background: var(--node-inactive);
+  box-shadow: none;
+}
+
+.entry-connector {
+  width: 1px;
+  flex: 1;
+  min-height: 1.5rem;
+  background: var(--line);
+  margin-top: 4px;
+}
+
+.entry-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.entry-date {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+}
+
+.entry-title {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
+.entry-content {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+
+.entry-content p { margin: 0 0 0.75rem; }
+.entry-content p:last-child { margin-bottom: 0; }
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.photo-grid a {
+  display: block;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .timeline { padding: 0.75rem 0.75rem 3rem; }
+  .site-header { padding: 1.5rem 0.75rem 0.75rem; }
+}

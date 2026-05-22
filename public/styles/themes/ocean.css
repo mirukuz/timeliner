@@ -1,0 +1,12 @@
+:root {
+  --bg: #0a1628;
+  --text-primary: #e0f0ff;
+  --text-secondary: #4a7090;
+  --text-muted: #2a4060;
+  --node-active: #38bdf8;
+  --node-inactive: #1e4a6a;
+  --line: #1e3a5a;
+  --accent: #38bdf8;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}

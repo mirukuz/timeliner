@@ -1,0 +1,16 @@
+---
+import Entry from './Entry.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entries: CollectionEntry<'days'>[];
+  lang?: string;
+}
+
+const { entries, lang = 'zh' } = Astro.props;
+---
+<main class="timeline">
+  {entries.map((entry, i) => (
+    <Entry entry={entry} isFirst={i === 0} lang={lang} />
+  ))}
+</main>

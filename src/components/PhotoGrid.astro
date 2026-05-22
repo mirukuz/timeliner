@@ -1,0 +1,19 @@
+---
+interface Props {
+  photos: string[];
+}
+
+const { photos } = Astro.props;
+---
+<div class="photo-grid">
+  {photos.map(photo => (
+    <a href={`/photos/${photo}`} target="_blank" rel="noopener noreferrer">
+      <img
+        src={`/photos-thumb/${photo}`}
+        alt=""
+        loading="lazy"
+        onerror="this.closest('a').style.display='none'"
+      />
+    </a>
+  ))}
+</div>

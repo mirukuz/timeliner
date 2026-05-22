@@ -1,0 +1,26 @@
+---
+import config from '../../timeliner.config';
+import { resolveThemeHref } from '../utils/theme';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  lang?: string;
+}
+
+const { title = config.title, lang = config.lang.primary } = Astro.props;
+const themeHref = resolveThemeHref(config.theme);
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={config.description} />
+    <link rel="stylesheet" href={themeHref} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

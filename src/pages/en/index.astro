@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Timeline from '../../components/Timeline.astro';
+import { getSortedEntries } from '../../utils/content';
+import config from '../../../timeliner.config';
+
+// If secondary language is disabled, redirect to primary page
+if (!config.lang.secondary) {
+  return Astro.redirect('/', 302);
+}
+
+const entries = await getSortedEntries();
+const primaryLang = config.lang.primary;
+---
+<BaseLayout lang={config.lang.secondary as string}>
+  <Header
+    title={config.title}
+    description={config.description}
+    langSwitch={{ href: '/', label: primaryLang.toUpperCase() }}
+  />
+  <Timeline entries={entries} lang={config.lang.secondary as string} />
+</BaseLayout>

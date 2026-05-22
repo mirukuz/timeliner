@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Timeline from '../components/Timeline.astro';
+import { getSortedEntries } from '../utils/content';
+import config from '../../timeliner.config';
+
+const entries = await getSortedEntries();
+const secondaryLang = config.lang.secondary;
+const langSwitch = secondaryLang
+  ? { href: `/${secondaryLang}/`, label: secondaryLang.toUpperCase() }
+  : undefined;
+---
+<BaseLayout>
+  <Header
+    title={config.title}
+    description={config.description}
+    langSwitch={langSwitch}
+  />
+  <Timeline entries={entries} lang={config.lang.primary} />
+</BaseLayout>

@@ -9,7 +9,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "astro": "^6.2.1"
+    "astro": "^6.2.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "typescript": "^5.5.0",

@@ -6,3 +6,5 @@ node_modules/
 !.env.example
 public/photos-thumb/
 .superpowers/
+.DS_Store
+*.log

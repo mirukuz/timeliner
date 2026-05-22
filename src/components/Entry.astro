@@ -1,5 +1,6 @@
 ---
 import PhotoGrid from './PhotoGrid.astro';
+import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 }
 
 const { entry, isFirst, lang = 'zh' } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const locale = lang === 'en' ? 'en-US' : 'zh-CN';
 const dateStr = entry.data.date.toLocaleDateString(locale, {
